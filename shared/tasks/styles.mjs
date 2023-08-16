@@ -70,7 +70,8 @@ export async function compileStylesheet([
     map: moduleDestPath.endsWith('.css')
       ? {
           annotation: true,
-          inline: false
+          inline: false,
+          sourcesContent: false
         }
       : false
   }
@@ -95,6 +96,7 @@ export async function compileStylesheet([
     // Pass source maps to PostCSS
     if (typeof options.map === 'object') {
       options.map.prev = map
+      options.map.sourcesContent = true
     }
   }
 
