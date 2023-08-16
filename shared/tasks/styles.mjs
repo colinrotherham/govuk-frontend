@@ -70,7 +70,8 @@ export async function compileStylesheet([
      */
     map: {
       annotation: true,
-      inline: false
+      inline: false,
+      sourcesContent: false
     }
   }
 
@@ -105,6 +106,7 @@ export async function compileStylesheet([
     // Pass source maps to PostCSS
     if (typeof options.map === 'object') {
       options.map.prev = map
+      options.map.sourcesContent = true
     }
   }
 
