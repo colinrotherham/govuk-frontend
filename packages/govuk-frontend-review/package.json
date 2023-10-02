@@ -14,7 +14,7 @@
     "build": "gulp build --color",
     "build:sassdoc": "sassdoc --config sassdoc.config.yaml ../govuk-frontend/src/govuk",
     "build:types": "tsc --build tsconfig.json",
-    "postbuild": "npm run build:sassdoc",
+    "postbuild": "npm run build:sassdoc && npm run build:types",
     "clean": "del-cli dist",
     "proxy": "browser-sync start --config browsersync.config.js",
     "serve": "nodemon",
