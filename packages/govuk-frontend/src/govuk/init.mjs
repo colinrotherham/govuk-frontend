@@ -19,10 +19,23 @@ import { ElementError, SupportError } from './errors/index.mjs'
 /**
  * Initialise all components
  *
- * Use the `data-module` attributes to find, instantiate and init all of the
+ * Use the `data-module` attributes to find and initialise all of the
  * components provided as part of GOV.UK Frontend.
  *
+ * @overload
+ * @param {Config} [config] - Config for all components (with optional scope)
+ * @returns {void}
+ */
+
+/**
+ * @overload
+ * @param {Element | Document | null} [$scope] - Scope of the document to search within
+ * @returns {void}
+ */
+
+/**
  * @param {Config | Element | Document | null} [scopeOrConfig] - Scope of the document to search within or config for all components (with optional scope)
+ * @returns {void}
  */
 function initAll(scopeOrConfig = {}) {
   const config = isObject(scopeOrConfig) ? scopeOrConfig : {}
@@ -88,10 +101,37 @@ function initAll(scopeOrConfig = {}) {
  * Any component errors will be caught and logged to the console.
  *
  * @template {CompatibleClass | CompatibleClass<typeof ConfigurableComponent>} ComponentClass
- * @param {ComponentClass} Component - class of the component to create
+ * @overload
+ * @param {ComponentClass} Component - Component class to initialise
+ * @param {ComponentConfig<ComponentClass>} [config] - Config supplied to component
+ * @param {CreateAllOptions<ComponentClass>} [options] - Options including scope of the document to search within and callback function if error throw by component on init
+ * @returns {InstanceType<ComponentClass>[]} Array of initialised components
+ */
+
+/**
+ * @template {CompatibleClass | CompatibleClass<typeof ConfigurableComponent>} ComponentClass
+ * @overload
+ * @param {ComponentClass} Component - Component class to initialise
+ * @param {ComponentConfig<ComponentClass>} [config] - Config supplied to component
+ * @param {OnErrorCallback<ComponentClass>} [onError] - Initialisation error callback
+ * @returns {InstanceType<ComponentClass>[]} Array of initialised components
+ */
+
+/**
+ * @template {CompatibleClass | CompatibleClass<typeof ConfigurableComponent>} ComponentClass
+ * @overload
+ * @param {ComponentClass} Component - Component class to initialise
+ * @param {ComponentConfig<ComponentClass>} [config] - Config supplied to component
+ * @param {Element | Document | null} [$scope] - Scope of the document to search within
+ * @returns {InstanceType<ComponentClass>[]} Array of initialised components
+ */
+
+/**
+ * @template {CompatibleClass | CompatibleClass<typeof ConfigurableComponent>} ComponentClass
+ * @param {ComponentClass} Component - Component class to initialise
  * @param {ComponentConfig<ComponentClass>} [config] - Config supplied to component
  * @param {OnErrorCallback<ComponentClass> | Element | Document | null | CreateAllOptions<ComponentClass>} [scopeOrOptions] - options for createAll including scope of the document to search within and callback function if error throw by component on init
- * @returns {Array<InstanceType<ComponentClass>>} - array of instantiated components
+ * @returns {InstanceType<ComponentClass>[]} Array of initialised components
  */
 function createAll(Component, config, scopeOrOptions) {
   let /** @type {NodeListOf<Element> | undefined} */ $elements
