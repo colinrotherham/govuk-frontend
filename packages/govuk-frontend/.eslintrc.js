@@ -75,12 +75,7 @@ module.exports = {
               MethodDefinition: true
             }
           }
-        ],
-
-        // JSDoc @param required in (mandatory) blocks but
-        // @param description is necessary in source code
-        'jsdoc/require-param-description': 'warn',
-        'jsdoc/require-param': 'error'
+        ]
       }
     },
     {
