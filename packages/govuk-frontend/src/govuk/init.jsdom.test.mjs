@@ -179,7 +179,8 @@ describe('initAll', () => {
     // Expect to have been called exactly once with the accordion in .my-scope
     expect(GOVUKFrontend.Accordion).toHaveBeenCalledTimes(1)
     expect(GOVUKFrontend.Accordion).toHaveBeenCalledWith(
-      document.querySelector('.my-scope [data-module="govuk-accordion"]')
+      document.querySelector('.my-scope [data-module="govuk-accordion"]'),
+      undefined
     )
   })
 

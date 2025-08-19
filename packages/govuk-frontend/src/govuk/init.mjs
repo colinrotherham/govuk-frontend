@@ -136,7 +136,7 @@ function createAll(Component, config, scopeOrOptions) {
       try {
         return /** @type {InstanceType<ComponentClass>} */ (
           // Only pass config to components that accept it
-          typeof config !== 'undefined'
+          'defaults' in Component
             ? new Component($element, config)
             : new Component($element)
         )
