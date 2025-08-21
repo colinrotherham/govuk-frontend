@@ -2,7 +2,7 @@ import { isInitialised, isSupported } from './common/index.mjs'
 import { ElementError, InitError, SupportError } from './errors/index.mjs'
 
 /**
- * Base Component class
+ * Base component class
  *
  * Centralises the behaviours shared by our components
  *

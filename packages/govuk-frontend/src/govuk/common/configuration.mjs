@@ -6,7 +6,7 @@ import { isObject, isScope, formatErrorMessage } from './index.mjs'
 export const configOverride = Symbol.for('configOverride')
 
 /**
- * Base Component class
+ * Base configurable component class
  *
  * Centralises the behaviours shared by our components
  *
@@ -17,7 +17,7 @@ export const configOverride = Symbol.for('configOverride')
  */
 export class ConfigurableComponent extends Component {
   /**
-   * configOverride
+   * Config override
    *
    * Function which defines configuration overrides to prioritize
    * properties from the root element's dataset.
@@ -38,10 +38,10 @@ export class ConfigurableComponent extends Component {
   }
 
   /**
-   * Returns the root element of the component
+   * Returns the config of the component
    *
    * @protected
-   * @returns {ConfigurationType} - the root element of component
+   * @returns {ConfigurationType} Config of component
    */
   get config() {
     return this._config
@@ -54,7 +54,7 @@ export class ConfigurableComponent extends Component {
   _config
 
   /**
-   * Constructs a new component, validating that GOV.UK Frontend is supported
+   * Constructs a new configurable component, validating that GOV.UK Frontend is supported
    *
    * @internal
    * @param {Element | null} $root - HTML element to use for component

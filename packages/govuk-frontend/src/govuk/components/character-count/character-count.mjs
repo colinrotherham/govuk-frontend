@@ -61,7 +61,7 @@ export class CharacterCount extends ConfigurableComponent {
    *
    * @internal
    * @param {CharacterCountConfig} datasetConfig - configuration specified by dataset
-   * @returns {CharacterCountConfig} - configuration to override by dataset
+   * @returns {CharacterCountConfig} Configuration to override by dataset
    */
   [configOverride](datasetConfig) {
     let configOverrides = {}
