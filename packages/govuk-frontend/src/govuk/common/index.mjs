@@ -11,7 +11,6 @@
  *
  * @private
  * @param {string} name - Breakpoint name
- * @returns {{ property: string, value?: string }} Breakpoint object
  */
 export function getBreakpoint(name) {
   const property = `--govuk-breakpoint-${name}`
@@ -79,7 +78,6 @@ export function setFocus($element, options = {}) {
  * @internal
  * @param {Element} $root - HTML element to be checked
  * @param {string} moduleName - name of component module
- * @returns {boolean} Whether component is already initialised
  */
 export function isInitialised($root, moduleName) {
   return (
@@ -95,7 +93,6 @@ export function isInitialised($root, moduleName) {
  * won't be supported.
  *
  * @param {HTMLElement | null} [$scope] - (internal) `<body>` HTML element checked for browser support
- * @returns {boolean} Whether GOV.UK Frontend is supported on this page
  */
 export function isSupported($scope = document.body) {
   if (!$scope) {
@@ -110,7 +107,6 @@ export function isSupported($scope = document.body) {
  *
  * @internal
  * @param {unknown} option - Option to check
- * @returns {boolean} Whether the option is an array
  */
 function isArray(option) {
   return Array.isArray(option)
@@ -146,7 +142,6 @@ export function isScope($scope) {
  * @internal
  * @param {CompatibleClass} Component - Component that threw the error
  * @param {string} message - Error message
- * @returns {string} - Formatted error message
  */
 export function formatErrorMessage(Component, message) {
   return `${Component.moduleName}: ${message}`

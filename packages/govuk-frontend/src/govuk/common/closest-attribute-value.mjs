@@ -4,7 +4,6 @@
  * @internal
  * @param {Element} $element - The element to start walking the DOM tree up
  * @param {string} attributeName - The name of the attribute
- * @returns {string | null} Attribute value
  */
 export function closestAttributeValue($element, attributeName) {
   const $closestElementWithAttribute = $element.closest(`[${attributeName}]`)

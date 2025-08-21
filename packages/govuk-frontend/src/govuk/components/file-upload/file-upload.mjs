@@ -336,7 +336,7 @@ export class FileUpload extends ConfigurableComponent {
    * Looks up the `<label>` element associated to the field
    *
    * @private
-   * @returns {HTMLElement} The `<label>` element associated to the field
+   * @returns The `<label>` element associated to the field
    * @throws {ElementError} If the `<label>` cannot be found
    */
   findLabel() {
@@ -444,7 +444,7 @@ export class FileUpload extends ConfigurableComponent {
  *
  * @internal
  * @param {DataTransfer} dataTransfer - The `DataTransfer` to check
- * @returns {boolean} - `true` if it contains files or we can't infer it, `false` otherwise
+ * @returns True if it contains files or we can't infer it
  */
 function isContainingFiles(dataTransfer) {
   // Safari sometimes does not provide info about types :'(

@@ -31,7 +31,6 @@ export class I18n {
    * @internal
    * @param {string} lookupKey - The lookup key of the string to use.
    * @param {{ [key: string]: unknown }} [options] - Any options passed with the translation string, e.g: for string interpolation.
-   * @returns {string} The appropriate translation string.
    * @throws {Error} Lookup key required
    * @throws {Error} Options required for `${}` placeholders
    */

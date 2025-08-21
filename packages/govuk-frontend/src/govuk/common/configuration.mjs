@@ -106,7 +106,6 @@ export class ConfigurableComponent extends Component {
  * @internal
  * @param {DOMStringMap[string]} value - The value to normalise
  * @param {SchemaProperty} [property] - Component schema property
- * @returns {string | boolean | number | undefined} Normalised data
  */
 export function normaliseString(value, property) {
   const trimmedValue = value ? value.trim() : ''
@@ -154,7 +153,6 @@ export function normaliseString(value, property) {
  * @template {[keyof ConfigurationType, SchemaProperty | undefined][]} SchemaEntryType
  * @param {CompatibleClass & { schema?: Schema<ConfigurationType> }} Component - Component class
  * @param {DOMStringMap} dataset - HTML element dataset
- * @returns {ObjectNested} Normalised dataset
  */
 export function normaliseDataset(Component, dataset) {
   if (!isObject(Component.schema)) {
@@ -204,7 +202,6 @@ export function normaliseDataset(Component, dataset) {
  * @internal
  * @template {CompatibleClass} ComponentClass
  * @param {Config | CreateAllOptions<ComponentClass> | OnErrorCallback<ComponentClass> | Element | Document | null} [scopeOrOptions] - Scope of the document to search within, initialisation options or error callback function
- * @returns {CreateAllOptions<ComponentClass>} Normalised options
  */
 export function normaliseOptions(scopeOrOptions) {
   let /** @type {Element | Document | null} */ $scope = document
@@ -247,7 +244,6 @@ export function normaliseOptions(scopeOrOptions) {
  *
  * @internal
  * @param {...{ [key: string]: unknown }} configObjects - Config objects to merge
- * @returns {{ [key: string]: unknown }} A merged config object
  */
 export function mergeConfigs(...configObjects) {
   // Start with an empty object as our base
@@ -287,7 +283,7 @@ export function mergeConfigs(...configObjects) {
  * @template {Partial<Record<keyof ConfigurationType, unknown>>} ConfigurationType
  * @param {Schema<ConfigurationType>} schema - The schema of a component
  * @param {ConfigurationType} config - Component config
- * @returns {string[]} List of validation errors
+ * @returns List of validation errors
  */
 export function validateConfig(schema, config) {
   const validationErrors = []
@@ -323,7 +319,7 @@ export function validateConfig(schema, config) {
  * @param {Schema<ConfigurationType>} schema - The schema of a component
  * @param {DOMStringMap} dataset - The object to extract key-value pairs from
  * @param {keyof ConfigurationType} namespace - The namespace to filter keys with
- * @returns {ObjectNested | undefined} Nested object with dot-separated key namespace removed
+ * @returns Nested object with dot-separated key namespace removed
  */
 export function extractConfigByNamespace(schema, dataset, namespace) {
   const property = schema.properties[namespace]

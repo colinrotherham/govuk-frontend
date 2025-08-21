@@ -22,7 +22,6 @@ export class Component {
    * Returns the root element of the component
    *
    * @protected
-   * @returns {RootElementType} - the root element of component
    */
   get $root() {
     return this._$root

@@ -190,7 +190,6 @@ export class Tabs extends Component {
    * Handle hashchange event
    *
    * @private
-   * @returns {void | undefined} Returns void, or undefined when prevented
    */
   onHashChange() {
     const hash = window.location.hash
@@ -243,7 +242,6 @@ export class Tabs extends Component {
    *
    * @private
    * @param {string} hash - Hash fragment including #
-   * @returns {HTMLAnchorElement | null} Tab link
    */
   getTab(hash) {
     return this.$root.querySelector(`a.govuk-tabs__tab[href="${hash}"]`)
@@ -309,7 +307,6 @@ export class Tabs extends Component {
    *
    * @private
    * @param {MouseEvent} event - Mouse click event
-   * @returns {void} Returns void
    */
   onTabClick(event) {
     const $currentTab = this.getCurrentTab()
@@ -435,7 +432,6 @@ export class Tabs extends Component {
    *
    * @private
    * @param {HTMLAnchorElement} $tab - Tab link
-   * @returns {Element | null} Tab panel
    */
   getPanel($tab) {
     const panelId = $tab.hash.replace('#', '')
@@ -512,7 +508,6 @@ export class Tabs extends Component {
    * Get current tab link
    *
    * @private
-   * @returns {HTMLAnchorElement | null} Tab link
    */
   getCurrentTab() {
     return this.$root.querySelector(

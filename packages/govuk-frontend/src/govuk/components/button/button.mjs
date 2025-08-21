@@ -65,7 +65,7 @@ export class Button extends ConfigurableComponent {
    *
    * @private
    * @param {MouseEvent} event - Mouse click event
-   * @returns {undefined | false} Returns undefined, or false when debounced
+   * @returns Returns undefined, or false when debounced
    */
   debounce(event) {
     // Check the button that was clicked has preventDoubleClick enabled

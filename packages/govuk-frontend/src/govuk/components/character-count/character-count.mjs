@@ -329,7 +329,6 @@ export class CharacterCount extends ConfigurableComponent {
    *
    * @private
    * @param {string} text - The text to count the characters of
-   * @returns {number} the number of characters (or words) in the text
    */
   count(text) {
     if (this.config.maxwords) {
@@ -344,7 +343,6 @@ export class CharacterCount extends ConfigurableComponent {
    * Get count message
    *
    * @private
-   * @returns {string} Status message
    */
   getCountMessage() {
     const remainingNumber = this.maxLength - this.count(this.$textarea.value)
@@ -359,7 +357,6 @@ export class CharacterCount extends ConfigurableComponent {
    * @private
    * @param {number} remainingNumber - The number of words/characaters remaining
    * @param {string} countType - "words" or "characters"
-   * @returns {string} Status message
    */
   formatCountMessage(remainingNumber, countType) {
     if (remainingNumber === 0) {
@@ -382,7 +379,7 @@ export class CharacterCount extends ConfigurableComponent {
    * always return true.
    *
    * @private
-   * @returns {boolean} true if the current count is over the config.threshold
+   * @returns True if the current count is over the config.threshold
    *   (or no threshold is set)
    */
   isOverThreshold() {

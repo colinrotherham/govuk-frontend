@@ -46,7 +46,6 @@ describe('/components/button', () => {
      * Sets the number of times a button was clicked
      *
      * @param {ElementHandle<HTMLButtonElement>} $button - Puppeteer button element
-     * @returns {Promise<ElementHandle<HTMLButtonElement>>} Puppeteer button element
      */
     async function setButtonTracking($button) {
       const counts = {
@@ -83,7 +82,6 @@ describe('/components/button', () => {
      * Gets the number of times the button was clicked
      *
      * @param {ElementHandle<HTMLButtonElement>} $button - Puppeteer button element
-     * @returns {Promise<{ click: number; debounce: number; }>} Number of times the button was clicked
      */
     function getButtonTracking($button) {
       return $button.evaluate((el) => ({

@@ -449,7 +449,7 @@ export class Accordion extends ConfigurableComponent {
    *
    * @private
    * @param {Element} $section - Section element
-   * @returns {boolean} True if expanded
+   * @returns True if expanded
    */
   isExpanded($section) {
     return $section.classList.contains(this.sectionExpandedClass)
@@ -459,7 +459,7 @@ export class Accordion extends ConfigurableComponent {
    * Check if all sections are open
    *
    * @private
-   * @returns {boolean} True if all sections are open
+   * @returns True if all sections are open
    */
   areAllSectionsOpen() {
     return Array.from(this.$sections).every(($section) =>
@@ -493,7 +493,6 @@ export class Accordion extends ConfigurableComponent {
    * attributes `id` can be safely used.
    *
    * @param {Element} $section - Section element
-   * @returns {string | undefined | null} Identifier for section
    */
   getIdentifier($section) {
     const $button = $section.querySelector(`.${this.sectionButtonClass}`)
@@ -557,7 +556,6 @@ export class Accordion extends ConfigurableComponent {
    * https://github.com/alphagov/govuk-frontend/issues/2327#issuecomment-922957442
    *
    * @private
-   * @returns {Element} DOM element
    */
   getButtonPunctuationEl() {
     const $punctuationEl = document.createElement('span')

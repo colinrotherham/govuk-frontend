@@ -34,8 +34,7 @@ import { ElementError, SupportError } from './errors/index.mjs'
  */
 
 /**
- * @param {Config | Element | Document | null} [scopeOrConfig] - Scope of the document to search within or config for all components (with optional scope)
- * @returns {void}
+ * @param {Config | Element | Document | null} [scopeOrConfig]
  */
 function initAll(scopeOrConfig = {}) {
   const config = isObject(scopeOrConfig) ? scopeOrConfig : {}
@@ -130,8 +129,7 @@ function initAll(scopeOrConfig = {}) {
  * @template {CompatibleClass | CompatibleClass<typeof ConfigurableComponent>} ComponentClass
  * @param {ComponentClass} Component - Component class to initialise
  * @param {ComponentConfig<ComponentClass>} [config] - Config supplied to component
- * @param {OnErrorCallback<ComponentClass> | Element | Document | null | CreateAllOptions<ComponentClass>} [scopeOrOptions] - options for createAll including scope of the document to search within and callback function if error throw by component on init
- * @returns {InstanceType<ComponentClass>[]} Array of initialised components
+ * @param {OnErrorCallback<ComponentClass> | Element | Document | null | CreateAllOptions<ComponentClass>} [scopeOrOptions]
  */
 function createAll(Component, config, scopeOrOptions) {
   let /** @type {NodeListOf<Element> | undefined} */ $elements

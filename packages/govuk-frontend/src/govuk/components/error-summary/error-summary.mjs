@@ -58,7 +58,7 @@ export class ErrorSummary extends ConfigurableComponent {
    *
    * @private
    * @param {EventTarget} $target - Event target
-   * @returns {boolean} True if the target was able to be focussed
+   * @returns True if the target was able to be focussed
    */
   focusTarget($target) {
     // If the element that was clicked was not a link, return early
@@ -103,8 +103,8 @@ export class ErrorSummary extends ConfigurableComponent {
    *
    * @private
    * @param {Element} $input - The input
-   * @returns {Element | null} Associated legend or label, or null if no
-   *   associated legend or label can be found
+   * @returns Associated legend or label, or null if no associated legend
+   *   or label can be found
    */
   getAssociatedLegendOrLabel($input) {
     const $fieldset = $input.closest('fieldset')
