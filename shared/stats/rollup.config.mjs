@@ -5,6 +5,8 @@ import { packageTypeToPath } from '@govuk-frontend/lib/names'
 import resolve from '@rollup/plugin-node-resolve'
 import terser from '@rollup/plugin-terser'
 import { defineConfig } from 'rollup'
+// @ts-expect-error - Types could not be resolved under 'moduleResolution' setting
+// eslint-disable-next-line import/no-unresolved
 import { visualizer } from 'rollup-plugin-visualizer'
 
 import { modulePaths, packageOptions } from './src/index.mjs'
