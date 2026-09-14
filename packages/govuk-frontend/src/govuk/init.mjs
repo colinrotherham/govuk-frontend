@@ -240,19 +240,27 @@ export { initAll, createAll }
  */
 
 /**
+ * Component config
+ *
  * @template {CompatibleClass} ComponentClass
  * @typedef {ConstructorParameters<ComponentClass>[1]} ComponentConfig
  */
 
 /**
+ * Initialisation error context
+ *
+ * Contains the element, component class and configuration
+ *
  * @template {CompatibleClass} ComponentClass
  * @typedef {object} ErrorContext
  * @property {Element} [element] - Element used for component module initialisation
  * @property {ComponentClass} [component] - Class of component
- * @property {Config | ComponentConfig<ComponentClass>} [config] - Config supplied to components
+ * @property {Config | ComponentConfig<ComponentClass>} config - Config supplied to components
  */
 
 /**
+ * Initialisation error callback
+ *
  * @template {CompatibleClass} ComponentClass
  * @callback OnErrorCallback
  * @param {unknown} error - Thrown error
@@ -260,10 +268,12 @@ export { initAll, createAll }
  */
 
 /**
+ * Initialisation options
+ *
  * @template {CompatibleClass} ComponentClass
  * @typedef {object} CreateAllOptions
- * @property {Element | Document | null} [scope] - scope of the document to search within
- * @property {OnErrorCallback<ComponentClass>} [onError] - callback function if error throw by component on init
+ * @property {Element | Document | null} [scope] - Scope of the document to search within
+ * @property {OnErrorCallback<ComponentClass>} [onError] - Initialisation error callback
  */
 
 /**

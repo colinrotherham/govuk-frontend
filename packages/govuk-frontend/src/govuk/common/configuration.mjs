@@ -12,7 +12,7 @@ export const configOverride = Symbol.for('configOverride')
  *
  * @virtual
  * @template {Partial<Record<keyof ConfigurationType, unknown>>} [ConfigurationType=ObjectNested]
- * @template {Element & { dataset: DOMStringMap }} [RootElementType=HTMLElement]
+ * @template {HTMLElement} [RootElementType=HTMLElement]
  * @augments Component<RootElementType>
  */
 export class ConfigurableComponent extends Component {
@@ -77,7 +77,11 @@ export class ConfigurableComponent extends Component {
       )
     }
 
-    const datasetConfig = /** @type {ConfigurationType} */ (
+    const schema = /** @type {Schema<ConfigurationType>} */ (
+      childConstructor.schema
+    )
+
+    const datasetConfig = /** @type {Partial<ConfigurationType>} */ (
       normaliseDataset(childConstructor, this._$root.dataset)
     )
 
@@ -388,7 +392,8 @@ export function extractConfigByNamespace(schema, dataset, namespace) {
 /**
  * @internal
  * @typedef {keyof ObjectNested} NestedKey
- * @typedef {{ [key: string]: string | boolean | number | ObjectNested | undefined }} ObjectNested
+ * @typedef {string | boolean | number} NestedValue
+ * @typedef {{ [key: string]: NestedValue | ObjectNested | undefined }} ObjectNested
  */
 
 /**
